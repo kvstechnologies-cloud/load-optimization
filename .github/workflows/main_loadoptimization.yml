@@ -50,6 +50,6 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'LoadOptimization'
-          slot-name: 'Production'
+          slot-name: 'Development'
           package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_81D053C48C594995AEDFCC40EAE2B790 }}
