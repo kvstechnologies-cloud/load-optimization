@@ -1,0 +1,43 @@
+AZURE DEPLOYMENT CHECKLIST
+==========================
+
+BEFORE DEPLOYMENT:
+[ ] Downloaded code from Replit as ZIP
+[ ] Extracted ZIP file to local folder
+[ ] Replaced package.json with azure-package.json
+[ ] Verified .nvmrc file contains "20.11.0"
+[ ] Have Azure account and subscription
+
+AZURE SETUP:
+[ ] Created Resource Group: truck-optimization-rg
+[ ] Created App Service Plan: B1 Basic, Linux
+[ ] Created Web App with Node.js 20 LTS runtime
+[ ] Configured Application Settings:
+    [ ] WEBSITE_NODE_DEFAULT_VERSION = 20.11.0
+    [ ] NODE_ENV = production
+    [ ] PORT = 8080
+    [ ] SCM_DO_BUILD_DURING_DEPLOYMENT = true
+    [ ] WEBSITE_RUN_FROM_PACKAGE = 1
+    [ ] DATABASE_URL = your-database-connection-string
+
+DEPLOYMENT:
+[ ] Created ZIP file (excluding node_modules, .git)
+[ ] Uploaded via Azure Portal → Advanced Tools → ZIP Push Deploy
+[ ] OR uploaded via FTP to /site/wwwroot/
+[ ] OR connected GitHub repository
+
+VERIFICATION:
+[ ] Checked deployment logs for errors
+[ ] Visited app URL: https://[app-name].azurewebsites.net
+[ ] Tested CSV upload functionality
+[ ] Verified database connection works
+[ ] Confirmed all features work as expected
+
+TROUBLESHOOTING (if needed):
+[ ] Checked Log stream for error messages
+[ ] Verified Node.js version is 20.11.0
+[ ] Confirmed all environment variables are set
+[ ] Ran manual build in Kudu console if needed
+
+REQUIRED NODE.JS VERSION: 20.11.0
+ESTIMATED MONTHLY COST: ~$13-15
